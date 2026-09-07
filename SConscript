@@ -58,12 +58,8 @@ if GetDepend(['RT_USING_HWTIMER']) or GetDepend(['RT_USING_PWM']):
     src += [os.path.join(src_path, 'stm32h7xx_hal_lptim.c')]
 
 if GetDepend(['BSP_USING_ETH']) or GetDepend(['BSP_USING_ETH_H750']):
-    if not GetDepend(['SOC_STM32H750_ARTPI']):
-        src += [os.path.join(src_path, 'stm32h7xx_hal_eth.c')]
-        src += [os.path.join(src_path, 'stm32h7xx_hal_eth_ex.c')]
-    else :
-        src += [os.path.join(src_path, 'Legacy/stm32h7xx_hal_eth.c')]
-        src += [os.path.join(src_path, 'Legacy/stm32h7xx_hal_eth_ex.c')] 
+    src += [os.path.join(src_path, 'stm32h7xx_hal_eth.c')]
+    src += [os.path.join(src_path, 'stm32h7xx_hal_eth_ex.c')]
 
 if GetDepend(['RT_USING_ADC']):
     src += [os.path.join(src_path, 'stm32h7xx_hal_adc.c')]
